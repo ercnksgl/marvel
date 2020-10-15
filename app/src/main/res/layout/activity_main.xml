@@ -8,19 +8,29 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/appBar"
-        app:navigationIcon="@drawable/ic_back"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-<View
-    android:id="@+id/divider"
-    android:layout_width="match_parent"
-    android:background="@color/color_bd"
-    android:layout_height="1dp"
-    android:layout_below="@id/appBar"/>
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_back">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Toolbar Title"
+            android:textColor="@color/color_33"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/appBar"
+        android:background="@color/color_bd" />
+
     <FrameLayout
         android:id="@+id/container"
-        android:layout_below="@id/divider"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/divider" />
 
 </RelativeLayout>

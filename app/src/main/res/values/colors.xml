@@ -8,6 +8,7 @@
     <color name="color_66">#666666</color>
     <color name="color_99">#999999</color>
     <color name="color_bd">#bdbdbd</color>
+    <color name="color_fd">#fdfdfd</color>
 
     <color name="color_primary_transparent">#E6FFFFFF</color>
 </resources>

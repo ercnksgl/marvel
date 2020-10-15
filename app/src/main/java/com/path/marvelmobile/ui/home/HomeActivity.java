@@ -1,6 +1,8 @@
 package com.path.marvelmobile.ui.home;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.path.marvelmobile.R;
 import com.path.marvelmobile.ui.base.BaseActivity;
@@ -15,11 +17,17 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.appBar);
-        toolbar.setTitle(getString(R.string.title_home));
+        toolbar.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
 
-        addFragment(HomeFragment.newInstance());
+        setToolbarTitle();
 
+        addFragment(HomeFragment.newInstance());
+    }
+
+    private void setToolbarTitle(){
+        TextView title = findViewById(R.id.toolbar_title);
+        title.setText(getText(R.string.title_home));
     }
 
     public void addFragment(Fragment fragment) {

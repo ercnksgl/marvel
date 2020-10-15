@@ -22,7 +22,7 @@ public abstract class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyVie
         this.list = list;
     }
 
-    public abstract void onSelected(String object);
+    public abstract void onSelected(GetCharactersResult result);
     public abstract void fetchData();
 
     public void AddList(List<GetCharactersResult> list){
@@ -59,8 +59,9 @@ public abstract class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyVie
 
         public void bindTo(int position){
             binding.tvCharacter.setOnClickListener(v->{
-               onSelected(binding.tvCharacter.getText().toString());
+               onSelected(list.get(position));
             });
+            binding.tvCharacter.setText(list.get(position).getName());
             String imgUrl = list.get(position).getThumbnail().getPath() +"."+ list.get(position).getThumbnail().getExtension();
             Glide.with(binding.getRoot().getContext()).load(imgUrl).into(binding.imgCharacter);
 
