@@ -1,10 +1,8 @@
 package com.path.marvelmobile.remote.repository;
-
 import com.path.marvelmobile.remote.response.getCharacters.GetCharactersResponseBody;
-
 import javax.inject.Inject;
 
-import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.Observable;
 
 
 public class RepositoryImp implements Repository {
@@ -18,7 +16,7 @@ public class RepositoryImp implements Repository {
 
 
     @Override
-    public Observable<GetCharactersResponseBody> getCharacters(int limit) {
-        return apiService.getCharacters(limit);
+    public Observable<GetCharactersResponseBody> getCharacters(String apiKey , String hash, String ts) {
+        return apiService.getCharacters(apiKey, hash,ts);
     }
 }

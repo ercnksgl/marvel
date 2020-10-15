@@ -1,12 +1,11 @@
 package com.path.marvelmobile.remote.interactions;
-
 import com.path.marvelmobile.remote.repository.Repository;
-import com.path.marvelmobile.remote.repository.RepositoryImp;
 import com.path.marvelmobile.remote.response.getCharacters.GetCharactersResponseBody;
+import com.path.marvelmobile.utilities.ApiConstant;
 
 import javax.inject.Inject;
 
-import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.Observable;
 
 
 public class HomeUseCase extends UseCase<GetCharactersResponseBody,HomeUseCase.Params> {
@@ -20,7 +19,7 @@ public class HomeUseCase extends UseCase<GetCharactersResponseBody,HomeUseCase.P
 
     @Override
     Observable<GetCharactersResponseBody> buildUseCaseObservable(Params params) {
-        return repository.getCharacters(params.limit);
+        return repository.getCharacters(ApiConstant.publicKey, ApiConstant.getHashKey(), ApiConstant.ts);
     }
 
     public static class Params{

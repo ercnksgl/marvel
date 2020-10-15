@@ -1,18 +1,32 @@
 package com.path.marvelmobile.remote.response.getCharacters;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class GetCharactersResponseBody {
 
 
-    @SerializedName("result")
-    private GetCharactersResult result;
+    @Expose
+    @SerializedName("data")
+    private GetCharactersData data;
 
-    public GetCharactersResult getResult() {
-        return result;
+    @Expose
+    @SerializedName("code")
+    private int code;
+
+    public GetCharactersData getData() {
+        return data;
     }
 
-    public void setResult(GetCharactersResult result) {
-        this.result = result;
+    public void setData(GetCharactersData data) {
+        this.data = data;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
 }

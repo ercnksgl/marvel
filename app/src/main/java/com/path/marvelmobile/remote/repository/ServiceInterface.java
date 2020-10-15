@@ -1,15 +1,18 @@
 package com.path.marvelmobile.remote.repository;
 
 import com.path.marvelmobile.remote.response.getCharacters.GetCharactersResponseBody;
+import com.path.marvelmobile.utilities.ServiceUrls;
 
 
-import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ServiceInterface {
 
 
-    @GET("v1/characters/{limit}")
-    Observable<GetCharactersResponseBody> getCharacters(@Path("limit") int limit);
+    @GET(ServiceUrls.GetCharacters)
+    Observable<GetCharactersResponseBody> getCharacters(@Query("apikey") String apiKey,
+                                                        @Query("hash") String hash,
+                                                        @Query("ts") String ts);
 }
