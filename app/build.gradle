@@ -49,8 +49,6 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
     // Dependency injection (Dagger 2)
-    def daggerVer = 2.27 // or latest version
-
     implementation "com.google.dagger:dagger:2.14.1"
     annotationProcessor "com.google.dagger:dagger-compiler:2.13"
 
